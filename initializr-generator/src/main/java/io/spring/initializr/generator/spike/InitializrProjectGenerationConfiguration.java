@@ -25,7 +25,7 @@ import io.spring.initializr.generator.project.ProjectGenerationConfiguration;
 import io.spring.initializr.generator.project.ResolvedProjectDescription;
 import io.spring.initializr.generator.spike.build.DependencyManagementBuildCustomizer;
 import io.spring.initializr.generator.spike.build.InitializrDefaultStarterBuildCustomizer;
-import io.spring.initializr.generator.spike.build.InitializrMetadataMavenBuildContributor;
+import io.spring.initializr.generator.spike.build.InitializrMetadataMavenBuildCustomizer;
 import io.spring.initializr.generator.spike.build.KotlinJpaGradleBuildCustomizer;
 import io.spring.initializr.generator.spike.build.KotlinJpaMavenBuildCustomizer;
 import io.spring.initializr.generator.spike.build.WarPackagingWebStarterBuildCustomizer;
@@ -68,8 +68,8 @@ public class InitializrProjectGenerationConfiguration {
 
 	@Bean
 	@ConditionalOnMaven
-	public InitializrMetadataMavenBuildContributor metadataMavenBuildContributor() {
-		return new InitializrMetadataMavenBuildContributor(this.projectDescription,
+	public InitializrMetadataMavenBuildCustomizer metadataMavenBuildContributor() {
+		return new InitializrMetadataMavenBuildCustomizer(this.projectDescription,
 				this.metadata);
 	}
 

@@ -30,14 +30,14 @@ import io.spring.initializr.metadata.InitializrMetadata;
  *
  * @author Stephane Nicoll
  */
-public class InitializrMetadataMavenBuildContributor
+public class InitializrMetadataMavenBuildCustomizer
 		implements BuildCustomizer<MavenBuild> {
 
 	private final ResolvedProjectDescription projectDescription;
 
 	private final InitializrMetadata metadata;
 
-	public InitializrMetadataMavenBuildContributor(
+	public InitializrMetadataMavenBuildCustomizer(
 			ResolvedProjectDescription projectDescription, InitializrMetadata metadata) {
 		this.projectDescription = projectDescription;
 		this.metadata = metadata;
